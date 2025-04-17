@@ -1,0 +1,814 @@
+----------------------- <25, 2> with kernels ----------------------- 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+- Kernel: <1, 1>   QuotSubGr: <25, 2>   #Types: 1 
+-- Type: [ 5, 5, 5 ] with multiplicity 2   #TriplesMod3Aut: 1 
+--- 1.Triple has 80 Aut()/BAut(S1) orbits 
+- Kernel: <5, 1>   QuotSubGr: <5, 1>   #Types: 1 
+-- Type: [ 5, 5, 5 ] with multiplicity 1   #TriplesMod3Aut: 1 
+--- 1.Triple has 4 Aut()/BAut(S1) orbits 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+Hodgenumber: [ 3, 1, 0, 5, 9 ]
+Triple: <<[ $.1^4 * $.2^3, $.2^4, $.1 * $.2^3 ], [ $.1^4 * $.2, $.1^4 * $.2^4, $.1^2 ]>, <[ $.1^2, $.1^2, $.1 ]>>
+ 
+Hodgenumber: [ 2, 0, 0, 7, 10 ]
+Triple: <<[ $.2, $.1^3 * $.2^3, $.1^2 * $.2 ], [ $.1^4 * $.2^3, $.1^3, $.1^3 * $.2^2 ]>, <[ $.1^3, $.1^3, $.1^4 ]>>
+ 
+Hodgenumber: [ 3, 1, 0, 5, 9 ]
+Triple: <<[ $.1^3 * $.2, $.1^3 * $.2^4, $.1^4 ], [ $.2^3, $.1^4 * $.2, $.1 * $.2 ]>, <[ $.1^4, $.1^4, $.1^2 ]>>
+ 
+Hodgenumber: [ 3, 1, 0, 5, 9 ]
+Triple: <<[ $.1^2 * $.2^2, $.1^2 * $.2^4, $.1 * $.2^4 ], [ $.2^2, $.1^4, $.1 * $.2^3 ]>, <[ $.1^4, $.1^4, $.1^2 ]>>
+ 
+Hodgenumber: [ 3, 1, 0, 5, 9 ]
+Triple: <<[ $.1 * $.2, $.1 * $.2^2, $.1^3 * $.2^2 ], [ $.2^2, $.1^4, $.1 * $.2^3 ]>, <[ $.1^2, $.1^2, $.1 ]>>
+ 
+Hodgenumber: [ 4, 2, 0, 3, 8 ]
+Triple: <<[ $.1^4 * $.2^4, $.1^4 * $.2^3, $.1^2 * $.2^3 ], [ $.2, $.1^2, $.1^3 * $.2^4 ]>, <[ $.1, $.1, $.1^3 ]>>
+ 
+Hodgenumber: [ 4, 2, 0, 3, 8 ]
+Triple: <<[ $.2, $.1^2 * $.2^2, $.1^3 * $.2^2 ], [ $.1^2 * $.2, $.1, $.1^2 * $.2^4 ]>, <[ $.1^3, $.1^3, $.1^4 ]>>
+ 
+Hodgenumber: [ 2, 0, 0, 7, 10 ]
+Triple: <<[ $.2, $.1^3 * $.2^3, $.1^2 * $.2 ], [ $.1 * $.2^4, $.1^3 * $.2, $.1 ]>, <[ $.1, $.1, $.1^3 ]>>
+ 
+Hodgenumbers: {*
+[ 2, 0, 0, 7, 10 ]^^2,
+[ 3, 1, 0, 5, 9 ]^^4,
+[ 4, 2, 0, 3, 8 ]^^2
+*} 
+> CheckThreefoldsAbsFaithfull(-5: logOutput := true, chiMin := -1, outputTripl\
+es := true);
+
+---------------------------  chi = -1  --------------------------- 
+
+---------------------------  chi = -2  --------------------------- 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+- Kernel: <1, 1>   QuotSubGr: <120, 34>   #Types: 3 
+-- Type: [ 3, 4, 4 ] with multiplicity 1   #TriplesMod3Aut: 1 
+--- 1.Triple has 1 Aut()/BAut(S1) orbits 
+-- Type: [ 2, 4, 5 ] with multiplicity 1   #TriplesMod3Aut: 1 
+--- 1.Triple has 1 Aut()/BAut(S1) orbits 
+-- Type: [ 2, 5, 6 ] with multiplicity 1   #TriplesMod3Aut: 1 
+--- 1.Triple has 1 Aut()/BAut(S1) orbits 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+Hodgenumber: [ 4, 1, 0, 5, 12 ]
+Triple: <[
+(1, 4, 9)(2, 3, 6)(5, 10, 8),
+(1, 8)(2, 10, 7, 4)(3, 6, 5, 9),
+(1, 10, 6, 2)(3, 4, 7, 5)(8, 9)
+], [
+(3, 8)(6, 10)(7, 9),
+(1, 3)(2, 4, 9, 6)(5, 10, 8, 7),
+(1, 8, 6, 7, 3)(2, 10, 5, 9, 4)
+], [
+(2, 10)(3, 5)(4, 7),
+(1, 10, 5, 3, 4)(2, 7, 6, 8, 9),
+(1, 7, 10)(2, 9, 8, 6, 4, 5)
+]>
+
+Hodgenumbers: {*
+[ 4, 1, 0, 5, 12 ]
+*} 
+
+---------------------------  chi = -3  --------------------------- 
+
+---------------------------  chi = -4  --------------------------- 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+- Kernel: <1, 1>   QuotSubGr: <168, 42>   #Types: 3 
+-- Type: [ 7, 7, 7 ] with multiplicity 1   #TriplesMod3Aut: 1 
+--- 1.Triple has 2 Aut()/BAut(S1) orbits 
+-- Type: [ 3, 3, 4 ] with multiplicity 1   #TriplesMod3Aut: 2 
+--- 1.Triple has 1 Aut()/BAut(S1) orbits 
+--- 2.Triple has 1 Aut()/BAut(S2) orbits 
+-- Type: [ 2, 3, 7 ] with multiplicity 1   #TriplesMod3Aut: 1 
+--- 1.Triple has 2 Aut()/BAut(S1) orbits 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+Hodgenumber: [ 9, 4, 0, 5, 21 ]
+Triple: <[
+(1, 5, 7, 3, 2, 4, 6),
+(1, 7, 4, 6, 3, 5, 2),
+(1, 3, 4, 5, 7, 6, 2)
+], [
+(1, 7, 6)(2, 3, 5),
+(1, 6, 4)(2, 7, 5),
+(1, 4, 7, 5)(2, 3)
+], [
+(1, 4)(3, 6),
+(1, 2, 7)(4, 5, 6),
+(1, 7, 2, 4, 3, 6, 5)
+]>
+
+Hodgenumber: [ 6, 1, 0, 11, 24 ]
+Triple: <[
+(1, 6, 5, 3, 2, 7, 4),
+(1, 3, 4, 2, 6, 5, 7),
+(1, 2, 7, 6, 3, 4, 5)
+], [
+(1, 7, 6)(2, 3, 5),
+(1, 6, 4)(2, 7, 5),
+(1, 4, 7, 5)(2, 3)
+], [
+(1, 4)(3, 6),
+(1, 2, 7)(4, 5, 6),
+(1, 7, 2, 4, 3, 6, 5)
+]>
+
+Hodgenumber: [ 9, 4, 0, 5, 21 ]
+Triple: <[
+(1, 5, 7, 3, 2, 4, 6),
+(1, 7, 4, 6, 3, 5, 2),
+(1, 3, 4, 5, 7, 6, 2)
+], [
+(1, 5, 6)(3, 4, 7),
+(1, 6, 3)(2, 5, 7),
+(1, 7)(2, 4, 3, 5)
+], [
+(1, 4)(3, 6),
+(1, 2, 7)(4, 5, 6),
+(1, 7, 2, 4, 3, 6, 5)
+]>
+
+Hodgenumber: [ 6, 1, 0, 11, 24 ]
+Triple: <[
+(1, 6, 5, 3, 2, 7, 4),
+(1, 3, 4, 2, 6, 5, 7),
+(1, 2, 7, 6, 3, 4, 5)
+], [
+(1, 5, 6)(3, 4, 7),
+(1, 6, 3)(2, 5, 7),
+(1, 7)(2, 4, 3, 5)
+], [
+(1, 4)(3, 6),
+(1, 2, 7)(4, 5, 6),
+(1, 7, 2, 4, 3, 6, 5)
+]>
+
+Hodgenumbers: {*
+[ 6, 1, 0, 11, 24 ]^^2,
+[ 9, 4, 0, 5, 21 ]^^2
+*} 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+- Kernel: <1, 1>   QuotSubGr: <168, 42>   #Types: 3 
+-- Type: [ 3, 3, 7 ] with multiplicity 1   #TriplesMod3Aut: 1 
+--- 1.Triple has 2 Aut()/BAut(S1) orbits 
+-- Type: [ 4, 4, 4 ] with multiplicity 1   #TriplesMod3Aut: 2 
+--- 1.Triple has 1 Aut()/BAut(S1) orbits 
+--- 2.Triple has 1 Aut()/BAut(S2) orbits 
+-- Type: [ 2, 3, 7 ] with multiplicity 1   #TriplesMod3Aut: 1 
+--- 1.Triple has 2 Aut()/BAut(S1) orbits 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+Hodgenumber: [ 7, 2, 0, 5, 19 ]
+Triple: <[
+(1, 2, 7)(3, 4, 5),
+(1, 6, 4)(3, 7, 5),
+(1, 3, 4, 6, 7, 5, 2)
+], [
+(1, 2, 3, 6)(4, 7),
+(1, 5, 4, 2)(3, 7),
+(2, 7)(3, 4, 5, 6)
+], [
+(3, 4)(5, 6),
+(1, 2, 5)(3, 7, 6),
+(1, 6, 7, 4, 3, 5, 2)
+]>
+
+Hodgenumber: [ 7, 2, 0, 5, 19 ]
+Triple: <[
+(1, 2, 7)(3, 4, 5),
+(1, 6, 4)(3, 7, 5),
+(1, 3, 4, 6, 7, 5, 2)
+], [
+(1, 4, 7, 3)(5, 6),
+(1, 4)(2, 7, 5, 3),
+(2, 7)(3, 6, 5, 4)
+], [
+(3, 4)(5, 6),
+(1, 2, 5)(3, 7, 6),
+(1, 6, 7, 4, 3, 5, 2)
+]>
+
+Hodgenumber: [ 6, 1, 0, 7, 20 ]
+Triple: <[
+(1, 7, 2)(4, 5, 6),
+(2, 4, 5)(3, 7, 6),
+(1, 2, 4, 7, 3, 5, 6)
+], [
+(1, 2, 3, 6)(4, 7),
+(1, 5, 4, 2)(3, 7),
+(2, 7)(3, 4, 5, 6)
+], [
+(3, 4)(5, 6),
+(1, 2, 5)(3, 7, 6),
+(1, 6, 7, 4, 3, 5, 2)
+]>
+
+Hodgenumber: [ 6, 1, 0, 7, 20 ]
+Triple: <[
+(1, 7, 2)(4, 5, 6),
+(2, 4, 5)(3, 7, 6),
+(1, 2, 4, 7, 3, 5, 6)
+], [
+(1, 4, 7, 3)(5, 6),
+(1, 4)(2, 7, 5, 3),
+(2, 7)(3, 6, 5, 4)
+], [
+(3, 4)(5, 6),
+(1, 2, 5)(3, 7, 6),
+(1, 6, 7, 4, 3, 5, 2)
+]>
+
+Hodgenumbers: {*
+[ 6, 1, 0, 7, 20 ]^^2,
+[ 7, 2, 0, 5, 19 ]^^2
+*} 
+
+---------------------------  chi = -5  --------------------------- 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+- Kernel: <1, 1>   QuotSubGr: <25, 2>   #Types: 1 
+-- Type: [ 5, 5, 5 ] with multiplicity 3   #TriplesMod3Aut: 1 
+--- 1.Triple has 80 Aut()/BAut(S1) orbits 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+Hodgenumber: [ 12, 6, 0, 7, 28 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^3 ],
+[ qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.2^4, qSubGrp.1 * qSubGrp.2^3 ],
+[ qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.1^2, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 11, 30 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.2^2, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^3, qSubGrp.1^4 * qSubGrp.2^4 ],
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.2, qSubGrp.1 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.2^2, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.2, qSubGrp.1 ],
+[ qSubGrp.1 * qSubGrp.2^3, qSubGrp.1 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.2, qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2 ],
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^2 ],
+[ qSubGrp.1 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1 ]
+]
+
+Hodgenumber: [ 12, 6, 0, 7, 28 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2^3 ],
+[ qSubGrp.2, qSubGrp.1^3, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.1^2, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 7, 26 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.2^2, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.1^2 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1 * qSubGrp.2^2, qSubGrp.1 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.2^4, qSubGrp.1^2 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2^2 ],
+[ qSubGrp.1^2, qSubGrp.1^2 * qSubGrp.2, qSubGrp.1 * qSubGrp.2^4 ],
+[ qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.2^2, qSubGrp.1 * qSubGrp.2 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 15, 32 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1 ],
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.2, qSubGrp.1 ],
+[ qSubGrp.1 * qSubGrp.2^3, qSubGrp.1 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 7, 26 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.2^4, qSubGrp.1 * qSubGrp.2^3 ],
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^3 * qSubGrp.2 ],
+[ qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^3 ]
+]
+
+Hodgenumber: [ 7, 1, 0, 13, 29 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.2 ],
+[ qSubGrp.1 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1 ],
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.2, qSubGrp.1 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 7, 26 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1 ],
+[ qSubGrp.2, qSubGrp.1 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^3 ],
+[ qSubGrp.1^4, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 11, 30 ]
+Triple: [
+[ qSubGrp.1^3, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.2^2 ],
+[ qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^4, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 11, 5, 0, 9, 29 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2, qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^2 ],
+[ qSubGrp.1^3, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.2^2 ],
+[ qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^3, qSubGrp.1^4 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 12, 6, 0, 3, 24 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^2 ],
+[ qSubGrp.1^2, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2 ],
+[ qSubGrp.2^4, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1^3 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 11, 30 ]
+Triple: [
+[ qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^3 ],
+[ qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.2^2, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.1^4, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.2 ],
+[ qSubGrp.1, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2 ],
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.1^2 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 11, 30 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^3 * qSubGrp.2 ],
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2^3 ],
+[ qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.1 * qSubGrp.2^4, qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.1^4, qSubGrp.1^2 * qSubGrp.2 ],
+[ qSubGrp.2^2, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1 * qSubGrp.2^2 ],
+[ qSubGrp.2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 13, 31 ]
+Triple: [
+[ qSubGrp.1, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^2 ],
+[ qSubGrp.2, qSubGrp.1^2, qSubGrp.1^3 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.2^3, qSubGrp.1^3 * qSubGrp.2^4 ],
+[ qSubGrp.1, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 11, 5, 0, 5, 25 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^4, qSubGrp.2^3 ],
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1 ],
+[ qSubGrp.2, qSubGrp.1 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^4, qSubGrp.1^2 ],
+[ qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.2^2, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.1 * qSubGrp.2^3, qSubGrp.1 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.2^2, qSubGrp.1^2, qSubGrp.1^3 * qSubGrp.2^3 ],
+[ qSubGrp.1^2 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^3 ],
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^3 ],
+[ qSubGrp.1^2 * qSubGrp.2, qSubGrp.1, qSubGrp.1^2 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1 * qSubGrp.2^4 ],
+[ qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^3 ],
+[ qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2, qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.2^3, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2^4 ],
+[ qSubGrp.1^2 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^3 ],
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.2, qSubGrp.1 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.2^4, qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^4 * qSubGrp.2^4 ],
+[ qSubGrp.1^2, qSubGrp.1^2 * qSubGrp.2, qSubGrp.1 * qSubGrp.2^4 ],
+[ qSubGrp.1^4, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 12, 6, 0, 7, 28 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^4, qSubGrp.2^3 ],
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1 ],
+[ qSubGrp.2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^4, qSubGrp.1^2 ],
+[ qSubGrp.2^2, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1 * qSubGrp.2^2 ],
+[ qSubGrp.1^2, qSubGrp.1^2 * qSubGrp.2, qSubGrp.1 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^3 ],
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^2 ],
+[ qSubGrp.2^4, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1^3 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 13, 31 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2, qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^2 ],
+[ qSubGrp.2^4, qSubGrp.1 * qSubGrp.2, qSubGrp.1^4 ],
+[ qSubGrp.1^2, qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^2 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 7, 26 ]
+Triple: [
+[ qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.1^2, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2 ],
+[ qSubGrp.1 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1 ]
+]
+
+Hodgenumber: [ 6, 0, 0, 15, 30 ]
+Triple: [
+[ qSubGrp.2^2, qSubGrp.1 * qSubGrp.2^4, qSubGrp.1^4 * qSubGrp.2^4 ],
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.1^2 ],
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.1^2 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 7, 26 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^3, qSubGrp.1^4 * qSubGrp.2^4 ],
+[ qSubGrp.1^4 * qSubGrp.2, qSubGrp.2^4, qSubGrp.1 ],
+[ qSubGrp.1^2 * qSubGrp.2^4, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 7, 26 ]
+Triple: [
+[ qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.2^4 ],
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1 ],
+[ qSubGrp.2, qSubGrp.1^3, qSubGrp.1^2 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 12, 6, 0, 3, 24 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2, qSubGrp.2^4, qSubGrp.1 ],
+[ qSubGrp.1^2 * qSubGrp.2^4, qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.1^4 * qSubGrp.2^2 ],
+[ qSubGrp.1^3 * qSubGrp.2, qSubGrp.1 * qSubGrp.2, qSubGrp.1 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.1^2 ],
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1 ],
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1^4 ],
+[ qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^4 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.2, qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2 ],
+[ qSubGrp.1^2 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^3 ],
+[ qSubGrp.1^2, qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^2 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 6, 0, 0, 15, 30 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1 * qSubGrp.2^4 ],
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.2, qSubGrp.1 ],
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.2, qSubGrp.1 ]
+]
+
+Hodgenumber: [ 11, 5, 0, 9, 29 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^3, qSubGrp.1^4 * qSubGrp.2^4 ],
+[ qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1 * qSubGrp.2^4 ],
+[ qSubGrp.1^2, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 13, 31 ]
+Triple: [
+[ qSubGrp.1, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.2, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2 ],
+[ qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 15, 32 ]
+Triple: [
+[ qSubGrp.2^4, qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^4 * qSubGrp.2^4 ],
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^2 ],
+[ qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.1 * qSubGrp.2^4, qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1 ],
+[ qSubGrp.1^2 * qSubGrp.2^4, qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.1^4 * qSubGrp.2^2 ],
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.2, qSubGrp.1 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 13, 31 ]
+Triple: [
+[ qSubGrp.2, qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2 ],
+[ qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.1^2 ],
+[ qSubGrp.2, qSubGrp.1^2, qSubGrp.1^3 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 11, 30 ]
+Triple: [
+[ qSubGrp.2^3, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2^4 ],
+[ qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^2 ],
+[ qSubGrp.1^2, qSubGrp.1^2 * qSubGrp.2, qSubGrp.1 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 11, 5, 0, 9, 29 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1 * qSubGrp.2^2, qSubGrp.1 ],
+[ qSubGrp.2^2, qSubGrp.1^4, qSubGrp.1 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 11, 30 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^3 ],
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.2, qSubGrp.1 ],
+[ qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2, qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 11, 5, 0, 9, 29 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2, qSubGrp.2^4, qSubGrp.1 ],
+[ qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^4, qSubGrp.2^3 ],
+[ qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^3 ],
+[ qSubGrp.1, qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2^2 ],
+[ qSubGrp.2^4, qSubGrp.1^2 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 7, 26 ]
+Triple: [
+[ qSubGrp.1^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^3 * qSubGrp.2^4 ],
+[ qSubGrp.1^2 * qSubGrp.2^4, qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.1^4 * qSubGrp.2^2 ],
+[ qSubGrp.1 * qSubGrp.2^4, qSubGrp.1^4, qSubGrp.2 ]
+]
+
+Hodgenumber: [ 11, 5, 0, 5, 25 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^4, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.2, qSubGrp.1 ],
+[ qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2, qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 7, 26 ]
+Triple: [
+[ qSubGrp.1^2 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.2, qSubGrp.1^2, qSubGrp.1^3 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 11, 5, 0, 5, 25 ]
+Triple: [
+[ qSubGrp.1, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^4, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 7, 26 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2, qSubGrp.2^4, qSubGrp.1 ],
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2^3 ],
+[ qSubGrp.1^3, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^4, qSubGrp.2^3 ],
+[ qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^2 * qSubGrp.2 ],
+[ qSubGrp.1, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 11, 5, 0, 9, 29 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^3 ],
+[ qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.2^2, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^3 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^3 * qSubGrp.2 ],
+[ qSubGrp.1^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^3 * qSubGrp.2^4 ],
+[ qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.2^2, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.1^2 * qSubGrp.2^4, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^3 ],
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^4 ]
+]
+
+Hodgenumber: [ 11, 5, 0, 9, 29 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^2 ],
+[ qSubGrp.1^2 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.1^4, qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 7, 26 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^3 * qSubGrp.2 ],
+[ qSubGrp.1^2 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1 * qSubGrp.2 ],
+[ qSubGrp.2, qSubGrp.1^3, qSubGrp.1^2 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 7, 1, 0, 13, 29 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.2^2, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.1^2 * qSubGrp.2^4, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^3 ],
+[ qSubGrp.1, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 15, 32 ]
+Triple: [
+[ qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.2^4 ],
+[ qSubGrp.1^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^3 * qSubGrp.2^4 ],
+[ qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1 * qSubGrp.2 ]
+]
+
+Hodgenumber: [ 12, 6, 0, 3, 24 ]
+Triple: [
+[ qSubGrp.1^2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.2^4 ],
+[ qSubGrp.2, qSubGrp.1^3, qSubGrp.1^2 * qSubGrp.2^4 ],
+[ qSubGrp.1^3 * qSubGrp.2^2, qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 7, 26 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.1^4, qSubGrp.1^2 * qSubGrp.2 ],
+[ qSubGrp.1^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^3 * qSubGrp.2^4 ],
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^4 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.2^4 ],
+[ qSubGrp.1^2 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^3 ],
+[ qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^3 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 11, 30 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.1^2 ],
+[ qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^2 ],
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.1, qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^3 * qSubGrp.2 ],
+[ qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.2 ],
+[ qSubGrp.1^4, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 7, 1, 0, 13, 29 ]
+Triple: [
+[ qSubGrp.2, qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^2 * qSubGrp.2 ],
+[ qSubGrp.1 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1 ],
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.2, qSubGrp.1 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 7, 26 ]
+Triple: [
+[ qSubGrp.1^3, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.2^2 ],
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2^3 ],
+[ qSubGrp.1^2, qSubGrp.1 * qSubGrp.2^2, qSubGrp.1^2 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 8, 2, 0, 11, 28 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.2^4, qSubGrp.1 * qSubGrp.2^3 ],
+[ qSubGrp.1^3, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.2^2 ],
+[ qSubGrp.1^2 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1 * qSubGrp.2 ]
+]
+
+Hodgenumber: [ 9, 3, 0, 9, 27 ]
+Triple: [
+[ qSubGrp.2^3, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2^4 ],
+[ qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2, qSubGrp.1^3 * qSubGrp.2 ],
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.1^3, qSubGrp.1^3 * qSubGrp.2^2 ]
+]
+
+Hodgenumber: [ 11, 5, 0, 9, 29 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^3 ],
+[ qSubGrp.1^4 * qSubGrp.2, qSubGrp.2^4, qSubGrp.1 ],
+[ qSubGrp.2, qSubGrp.1 * qSubGrp.2^3, qSubGrp.1^4 * qSubGrp.2 ]
+]
+
+Hodgenumber: [ 10, 4, 0, 11, 30 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^3, qSubGrp.1^3 * qSubGrp.2^4, qSubGrp.1^3 * qSubGrp.2^3 ],
+[ qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2, qSubGrp.1^2 * qSubGrp.2^2 ],
+[ qSubGrp.2^2, qSubGrp.1^4, qSubGrp.1 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 12, 6, 0, 3, 24 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^4, qSubGrp.1^4, qSubGrp.1^2 * qSubGrp.2 ],
+[ qSubGrp.1^4 * qSubGrp.2, qSubGrp.2^4, qSubGrp.1 ],
+[ qSubGrp.2, qSubGrp.1 * qSubGrp.2, qSubGrp.1^4 * qSubGrp.2^3 ]
+]
+
+Hodgenumber: [ 7, 1, 0, 17, 33 ]
+Triple: [
+[ qSubGrp.1^4 * qSubGrp.2^2, qSubGrp.1^3 * qSubGrp.2^3, qSubGrp.1^3 ],
+[ qSubGrp.1^3, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.2^2 ],
+[ qSubGrp.2^4, qSubGrp.1^2 * qSubGrp.2^3, qSubGrp.1^3 * qSubGrp.2^3 ]
+]
+
+Hodgenumbers: {*
+[ 6, 0, 0, 15, 30 ]^^2,
+[ 7, 1, 0, 13, 29 ]^^3,
+[ 7, 1, 0, 17, 33 ],
+[ 8, 2, 0, 11, 28 ]^^13,
+[ 8, 2, 0, 15, 32 ]^^3,
+[ 9, 3, 0, 9, 27 ]^^14,
+[ 9, 3, 0, 13, 31 ]^^4,
+[ 10, 4, 0, 7, 26 ]^^12,
+[ 10, 4, 0, 11, 30 ]^^8,
+[ 11, 5, 0, 5, 25 ]^^3,
+[ 11, 5, 0, 9, 29 ]^^7,
+[ 12, 6, 0, 3, 24 ]^^4,
+[ 12, 6, 0, 7, 28 ]^^3
+*} 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+- Kernel: <1, 1>   QuotSubGr: <120, 34>   #Types: 3 
+-- Type: [ 3, 4, 4 ] with multiplicity 1   #TriplesMod3Aut: 1 
+--- 1.Triple has 1 Aut()/BAut(S1) orbits 
+-- Type: [ 2, 4, 5 ] with multiplicity 1   #TriplesMod3Aut: 1 
+--- 1.Triple has 1 Aut()/BAut(S1) orbits 
+-- Type: [ 3, 6, 6 ] with multiplicity 1   #TriplesMod3Aut: 1 
+--- 1.Triple has 1 Aut()/BAut(S1) orbits 
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 
+Hodgenumber: [ 8, 2, 0, 7, 24 ]
+Triple: <[
+(1, 9, 7)(2, 3, 8)(5, 10, 6),
+(1, 2, 10, 6)(3, 7)(4, 8, 5, 9),
+(1, 10, 8, 4)(2, 7)(3, 9, 6, 5)
+], [
+(2, 4)(6, 9)(7, 10),
+(1, 9, 7, 4)(2, 6, 5, 8)(3, 10),
+(1, 2, 8, 5, 9)(3, 7, 6, 4, 10)
+], [
+(2, 6, 10)(3, 5, 8)(4, 9, 7),
+(1, 3, 7, 2, 9, 8)(5, 10, 6),
+(1, 5, 2, 9, 10, 3)(4, 7, 8)
+]>
+
+Hodgenumbers: {*
+[ 8, 2, 0, 7, 24 ]
+*} 
+> 
+> 
+>   
