@@ -1,0 +1,489 @@
+// We load gullinbursti database together with 
+
+load"Triple_of_Signatures_giving_Beauville_threefolds_with_fixed_chi.txt";
+
+// We determine the list of all small groups in the MAGMA database together with triples of spherical systems of generators giving a triple of signatures compatible with the characteristic chi=-4. 
+
+List:=ListTriplesSphSyst(AdmitGenTripples(-4));
+
+// We finally select only those giving a product-quotient threefold isogenous to a product, namely a Beauville threefold. 
+
+Result:=SmoothCondOfTheList(List);
+
+#Result;
+451584
+
+// Let us see which are the groups giving Beauville threefold with chi=-4 and what are the compatible triple of signatures 
+
+{IdentifyGroup(x[1]): x in Result};
+{ <168, 42> }
+
+{ {*[Order(x[2][j][i]) :i in [1..#x[2][j]]] : j in [1,2,3]*}: x in Result}; 
+
+{
+    {*
+        [ 2, 7, 3 ],
+        [ 4, 3, 3 ],
+        [ 7, 7, 7 ]
+    *},
+    {*
+        [ 2, 7, 3 ],
+        [ 4, 4, 4 ],
+        [ 7, 3, 3 ]
+    *}
+}
+
+
+ 
+// These cases may give isomorphic Beauville threefolds, so we have to select and store in a list only those that are two-by-two not isomorphic. This can be done by using:
+
+
+load"Counting_PQ_varities_from_SSGs_with_Kernels.txt"
+
+G:=SmallGroup(168,42);
+K:=[sub<G|Id(G)>, sub<G|Id(G)>, sub<G|Id(G)>];
+
+test1, S1:=generatorsFixedGroupFromDb(G,168,42,MultisetToSequence({*2, 7, 3*}));
+test2, S2:=generatorsFixedGroupFromDb(G,168,42,MultisetToSequence({* 4, 3, 3*}));
+test3, S3:=generatorsFixedGroupFromDb(G,168,42,MultisetToSequence({*  7, 7, 7*}));
+
+ S1;
+{
+    [
+        (1, 4)(3, 7),
+        (1, 7, 6, 2, 3, 5, 4),
+        (2, 6, 3)(4, 5, 7)
+    ]
+}
+S2;
+{
+    [
+        (1, 2, 3, 6)(4, 7),
+        (1, 5, 2)(3, 6, 7),
+        (2, 5, 6)(3, 4, 7)
+    ],
+    [
+        (1, 5, 4, 2)(3, 7),
+        (1, 3, 5)(4, 6, 7),
+        (2, 4, 3)(5, 7, 6)
+    ]
+}
+S3;
+not present in database
+// Let us compute directly all spherical systems of generators of signature [7,7,7] and group G(168,42)
+
+FindGenerators(G, MultisetToSequence({*7,7,7*}));
+ {
+    [
+        (1, 2, 6, 7, 5, 3, 4),
+        (1, 7, 4, 2, 5, 3, 6),
+        (1, 2, 3, 7, 4, 6, 5)
+    ]
+ }
+
+// Thus we have only two possibilities for triples of spherical systems of generators
+
+// The first case is 
+
+S1:=[
+        G!(1, 4)(3, 7),
+        G!(1, 7, 6, 2, 3, 5, 4),
+        G!(2, 6, 3)(4, 5, 7)
+    ];
+S2:=[
+        G!(1, 2, 3, 6)(4, 7),
+        G!(1, 5, 2)(3, 6, 7),
+        G!(2, 5, 6)(3, 4, 7)
+    ];
+S3:=[
+        G!(1, 2, 6, 7, 5, 3, 4),
+        G!(1, 7, 4, 2, 5, 3, 6),
+        G!(1, 2, 3, 7, 4, 6, 5)
+    ];
+
+S:=[S1,S2,S3];
+
+time Final:=Counting_PQ_from_Classes_SSG_with_Kernels(G,K,S);
+Time: 138.400
+
+Final;
+[
+    [
+        [
+            (1, 4)(3, 7),
+           (1, 7, 6, 2, 3, 5, 4),
+            (2, 6, 3)(4, 5, 7)
+        ],
+        [
+            (1, 5)(2, 7, 4, 6),
+            (1, 5, 6)(2, 4, 3),
+            (1, 4, 6)(2, 3, 7)
+        ],
+        [
+            (1, 4, 3, 6, 2, 7, 5),
+            (1, 2, 3, 7, 4, 6, 5),
+            (1, 7, 4, 2, 5, 3, 6)
+        ]
+    ],
+    [
+        [
+            (1, 4)(3, 7),
+            (1, 7, 6, 2, 3, 5, 4),
+            (2, 6, 3)(4, 5, 7)
+        ],
+        [
+            (1, 4)(2, 3, 5, 7),
+           (1, 3, 5)(2, 7, 6),
+            (1, 3, 4)(2, 6, 5)
+        ],
+        [
+            (1, 5, 2, 7, 4, 3, 6),
+           (1, 7, 6, 4, 5, 2, 3),
+            (1, 4, 3, 5, 7, 6, 2)
+        ]
+    ]
+]
+
+
+// Let us see which of them is smooth
+
+SmoothFinal:=SmoothCondOfTheList([[*G,x*]: x in Final]);
+#SmoothFinal;
+2
+
+// We now compute their Hodge numbers. 
+
+load"Hodge_Diamond.txt";
+
+HodgeList:=[];
+
+for x in Final do 
+  T:=[]; X:=[];
+  for j in [1..#x] do 
+   Append(~T, [0] cat [Order(g): g in x[j]]);
+  end for;
+  for j in [1..#x] do 
+   Append(~X, chi_phi(G,x[j],T[j]));
+  end for;
+  Append(~HodgeList, HodgeDiamondInvarG0(G,X[1],X[2],X[3]));
+end for;
+
+HodgeList;
+[
+    [ 6, 1, 0, 11, 24 ],
+    [ 9, 4, 0, 5, 21 ]
+]
+
+////////////////////////////////////
+// Let us consider now the second case 
+
+S1:=[
+        G!(1, 4)(3, 7),
+        G!(1, 7, 6, 2, 3, 5, 4),
+        G!(2, 6, 3)(4, 5, 7)
+    ];
+S2:=[
+        G!(1, 5, 4, 2)(3, 7),
+        G!(1, 3, 5)(4, 6, 7),
+        G!(2, 4, 3)(5, 7, 6)
+    ];
+S3:=[
+        G!(1, 2, 6, 7, 5, 3, 4),
+        G!(1, 7, 4, 2, 5, 3, 6),
+        G!(1, 2, 3, 7, 4, 6, 5)
+    ];
+
+S:=[S1,S2,S3]; 
+
+time Final:=Counting_PQ_from_Classes_SSG_with_Kernels(G,K,S);
+Time: 144.780
+
+Final;
+[   
+    [   
+        [   
+            (1, 4)(3, 7),
+            (1, 7, 6, 2, 3, 5, 4),
+            (2, 6, 3)(4, 5, 7)
+        ],
+        [   
+            (1, 3, 2, 6)(4, 5),
+            (2, 5, 6)(3, 4, 7),
+            (1, 6, 4)(3, 7, 5)
+        ],
+        [   
+            (1, 4, 3, 6, 2, 7, 5),
+            (1, 2, 3, 7, 4, 6, 5),
+            (1, 7, 4, 2, 5, 3, 6)
+        ]
+    ],
+    [   
+        [   
+            (1, 4)(3, 7),
+            (1, 7, 6, 2, 3, 5, 4),
+            (2, 6, 3)(4, 5, 7)
+        ],
+        [   
+            (1, 3)(2, 7, 6, 4),
+            (1, 4, 5)(3, 6, 7),
+            (1, 5, 6)(2, 4, 3)
+        ],
+        [   
+            (1, 5, 2, 7, 4, 3, 6),
+            (1, 7, 6, 4, 5, 2, 3),
+            (1, 4, 3, 5, 7, 6, 2)
+        ]
+    ]
+]
+
+
+// Let us see which of them is smooth
+
+SmoothFinal:=SmoothCondOfTheList([[*G,x*]: x in Final]);
+#SmoothFinal;
+2
+
+// We now compute their Hodge numbers. 
+
+load"Hodge_Diamond.txt";
+
+HodgeList:=[];
+
+for x in Final do 
+  T:=[]; X:=[];
+  for j in [1..#x] do 
+   Append(~T, [0] cat [Order(g): g in x[j]]);
+  end for;
+  for j in [1..#x] do 
+   Append(~X, chi_phi(G,x[j],T[j]));
+  end for;
+  Append(~HodgeList, HodgeDiamondInvarG0(G,X[1],X[2],X[3]));
+end for;
+
+HodgeList;
+[
+    [ 6, 1, 0, 11, 24 ],
+    [ 9, 4, 0, 5, 21 ]
+]
+
+////////////////////////////////////////////////////////////////////////
+
+// Now we have to consider the other triple of signatures: 
+
+G:=SmallGroup(168,42);
+K:=[sub<G|Id(G)>, sub<G|Id(G)>, sub<G|Id(G)>];
+
+test1, S1:=generatorsFixedGroupFromDb(G,168,42,MultisetToSequence({*2, 7, 3*}));
+test2, S2:=generatorsFixedGroupFromDb(G,168,42,MultisetToSequence({* 4, 4, 4*}));
+test3, S3:=generatorsFixedGroupFromDb(G,168,42,MultisetToSequence({*  7, 3, 3*}));
+
+
+S1;
+{
+    [
+        (1, 4)(3, 7),
+        (1, 7, 6, 2, 3, 5, 4),
+        (2, 6, 3)(4, 5, 7)
+    ]
+}
+> S2;
+{
+    [
+        (1, 3, 6, 2)(5, 7),
+        (2, 7)(3, 4, 5, 6),
+        (1, 2, 5, 4)(6, 7)
+    ],
+    [
+        (1, 4)(2, 3, 5, 7),
+        (2, 6, 7, 4)(3, 5),
+        (1, 4, 5, 2)(6, 7)
+    ]
+}
+> S3;
+{
+    [
+        (1, 7, 4, 2, 5, 3, 6),
+        (1, 2, 7)(3, 6, 4),
+        (2, 6, 5)(3, 7, 4)
+    ]
+}
+
+// The first case is 
+
+S1:=[
+        G!(1, 4)(3, 7),
+        G!(1, 7, 6, 2, 3, 5, 4),
+        G!(2, 6, 3)(4, 5, 7)
+    ];
+S2:=[
+        G!(1, 3, 6, 2)(5, 7),
+        G!(2, 7)(3, 4, 5, 6),
+        G!(1, 2, 5, 4)(6, 7)
+    ];
+S3:=[
+        G!(1, 7, 4, 2, 5, 3, 6),
+        G!(1, 2, 7)(3, 6, 4),
+        G!(2, 6, 5)(3, 7, 4)
+    ];
+
+S:=[S1,S2,S3];
+time Final:=Counting_PQ_from_Classes_SSG_with_Kernels(G,K,S);
+Time: 174.800
+
+Final;
+[   
+    [   
+        [   
+            (1, 4)(3, 7),
+            (1, 7, 6, 2, 3, 5, 4),
+            (2, 6, 3)(4, 5, 7)
+        ],
+        [   
+            (1, 7, 5, 6)(2, 4),
+            (1, 4)(2, 3, 5, 7),
+            (1, 2)(3, 4, 6, 5)
+        ],
+        [   
+            (1, 2, 3, 7, 4, 6, 5),
+            (1, 2, 4)(3, 6, 7),
+            (1, 7, 4)(2, 5, 6)
+        ]
+    ],
+    [   
+        [   
+            (1, 4)(3, 7),
+            (1, 7, 6, 2, 3, 5, 4),
+            (2, 6, 3)(4, 5, 7)
+        ],
+        [   
+            (1, 6)(2, 7, 3, 5),
+            (1, 2)(3, 4, 6, 5),
+            (1, 5)(2, 6, 4, 7)
+        ],
+        [   
+            (1, 7, 6, 4, 5, 2, 3),
+            (1, 4, 5)(3, 6, 7),
+            (1, 4, 3)(2, 5, 6)
+        ]
+    ]
+]
+
+// Let us see which of them is smooth
+
+SmoothFinal:=SmoothCondOfTheList([[*G,x*]: x in Final]);
+#SmoothFinal;
+2
+
+// We now compute their Hodge numbers. 
+
+load"Hodge_Diamond.txt";
+
+HodgeList:=[];
+
+for x in Final do 
+  T:=[]; X:=[];
+  for j in [1..#x] do 
+   Append(~T, [0] cat [Order(g): g in x[j]]);
+  end for;
+  for j in [1..#x] do 
+   Append(~X, chi_phi(G,x[j],T[j]));
+  end for;
+  Append(~HodgeList, HodgeDiamondInvarG0(G,X[1],X[2],X[3]));
+end for;
+
+HodgeList;
+[
+    [ 6, 1, 0, 7, 20 ],
+    [ 7, 2, 0, 5, 19 ]
+]
+
+
+// The second case is 
+
+S1:=[
+        G!(1, 4)(3, 7),
+        G!(1, 7, 6, 2, 3, 5, 4),
+        G!(2, 6, 3)(4, 5, 7)
+    ];
+S2:=[
+        G!(1, 4)(2, 3, 5, 7),
+        G!(2, 6, 7, 4)(3, 5),
+        G!(1, 4, 5, 2)(6, 7)
+    ];
+S3:=[
+        G!(1, 7, 4, 2, 5, 3, 6),
+        G!(1, 2, 7)(3, 6, 4),
+        G!(2, 6, 5)(3, 7, 4)
+    ];
+
+S:=[S1,S2,S3];
+time Final:=Counting_PQ_from_Classes_SSG_with_Kernels(G,K,S);
+Time: 169.760
+
+Final;
+[   
+    [   
+        [   
+            (1, 4)(3, 7),
+            (1, 7, 6, 2, 3, 5, 4),
+            (2, 6, 3)(4, 5, 7)
+        ],
+        [   
+            (1, 3, 6, 2)(5, 7),
+            (2, 5, 7, 3)(4, 6),
+            (1, 2)(3, 5, 6, 4)
+        ],
+        [   
+            (1, 2, 3, 7, 4, 6, 5),
+            (1, 2, 4)(3, 6, 7),
+            (1, 7, 4)(2, 5, 6)
+        ]
+    ],
+    [   
+        [   
+            (1, 4)(3, 7),
+            (1, 7, 6, 2, 3, 5, 4),
+            (2, 6, 3)(4, 5, 7)
+        ],
+        [   
+            (1, 2, 3, 6)(4, 7),
+            (1, 4, 2, 5)(3, 6),
+            (1, 5)(2, 7, 4, 6)
+        ],
+        [   
+            (1, 7, 6, 4, 5, 2, 3),
+            (1, 4, 5)(3, 6, 7),
+            (1, 4, 3)(2, 5, 6)
+        ]
+    ]
+]
+
+
+// Let us see which of them is smooth
+
+SmoothFinal:=SmoothCondOfTheList([[*G,x*]: x in Final]);
+#SmoothFinal;
+2
+
+// We now compute their Hodge numbers. 
+
+load"Hodge_Diamond.txt";
+
+HodgeList:=[];
+
+for x in Final do 
+  T:=[]; X:=[];
+  for j in [1..#x] do 
+   Append(~T, [0] cat [Order(g): g in x[j]]);
+  end for;
+  for j in [1..#x] do 
+   Append(~X, chi_phi(G,x[j],T[j]));
+  end for;
+  Append(~HodgeList, HodgeDiamondInvarG0(G,X[1],X[2],X[3]));
+end for;
+
+HodgeList;
+[
+    [ 6, 1, 0, 7, 20 ],
+    [ 7, 2, 0, 5, 19 ]
+]

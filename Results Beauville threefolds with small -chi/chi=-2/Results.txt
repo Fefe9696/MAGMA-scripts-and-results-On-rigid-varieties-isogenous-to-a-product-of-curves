@@ -1,0 +1,129 @@
+// We load gullinbursti database together with 
+
+load"Triple_of_Signatures_giving_Beauville_threefolds_with_fixed_chi.txt";
+
+// We determine the list of all small groups in the MAGMA database together with triples of spherical systems of generators giving a triple of signatures compatible with the characteristic chi=-2. 
+
+List:=ListTriplesSphSyst(AdmitGenTripples(-2));
+
+// We finally select only those giving a product-quotient threefold isogenous to a product, namely a Beauville threefold. 
+
+Result:=SmoothCondOfTheList(List);
+
+#Result;
+14400
+
+// Let us see which are the groups giving Beauville threefold with chi=-2 and what are the compatible triple of signatures 
+
+{IdentifyGroup(x[1]): x in Result};
+{ <120, 34> }
+
+{ {*[Order(x[2][j][i]) :i in [1..#x[2][j]]] : j in [1,2,3]*}: x in Result};  
+{
+    {*
+        [ 2, 5, 4 ],
+        [ 2, 6, 5 ],
+        [ 3, 4, 4 ]
+    *}
+}
+
+// Hence we have 14400 cases of [G, triple of SSGs] with group G:=SmallGroup(120,34) and the above triple of signatures.
+ 
+// However, these cases may give isomorphic Beauville threefolds, so we have to select and store in a list only those that are two-by-two not isomorphic. This can be done by using:
+
+load"Counting_PQ_varities_from_SSGs_with_Kernels.txt"
+
+G:=SmallGroup(120,34);
+K:=[sub<G|Id(G)>, sub<G|Id(G)>, sub<G|Id(G)>];
+
+test1, S1:=generatorsFixedGroupFromDb(G,120,34,MultisetToSequence({*2, 5, 4*}));
+test2, S2:=generatorsFixedGroupFromDb(G,120,34,MultisetToSequence({* 2, 6, 5*}));
+test3, S3:=generatorsFixedGroupFromDb(G,120,34,MultisetToSequence({*  3, 4, 4*}));
+
+#S1, #S2, #S3;
+1 1 1
+
+S1:=Representative(S1);
+S2:=Representative(S2);
+S3:=Representative(S3);
+
+S:=[S1,S2,S3];
+
+time Final:=Counting_PQ_from_Classes_SSG_with_Kernels(G,K,S);
+Time: 5.830
+
+Final;
+[
+    [
+        [
+            (3, 4),
+            (1, 2, 5, 3, 4),
+            (1, 3, 5, 2)
+        ],
+        [
+            (4, 5),
+            (1, 4, 2)(3, 5),
+            (1, 2, 5, 3, 4)
+        ],
+        [
+            (1, 3, 4),
+            (1, 5, 2, 3),
+            (2, 5, 4, 3)
+        ]
+    ]
+]
+
+// Thus, the 14400 threefolds are all isomorphic to each other and are defined by the above triple of spherical systems of generators of G. 
+
+// Let us verify that it is smooth
+
+SmoothCondOfTheList([[* G, x*]: x in Final]);
+#SmoothCondOfTheList([[* G, x*]: x in Final]);
+1
+
+// Let us verify that the Euler characteristic is -2 : 
+
+Hurwitz:=function(ord,T)
+     res:=-2;
+     for x in T do 
+       res:=res+(1-1/x);
+     end for;
+return 1/2*ord*res+1;
+end function;
+
+Hurwitz(120,[2,5,4]);  
+4
+
+Hurwitz(120,[2,6,5]);
+9
+
+Hurwitz(120,[3,4,4]);
+11
+
+// Since chi=-(g1-1)(g2-1)(g3-1)/|G| , then 
+
+-3*8*10/120 eq -2; 
+
+true
+
+
+// We determine the Hodge numbers of this threefold. 
+
+load"Hodge Diamond.txt";
+
+T1:=[0,2,5,4];
+T2:=[0,2,6,5];
+T3:=[0,3,4,4];
+
+HodgeList:=[];
+
+for X in Final do 
+  V1:=X[1]; V2:=X[2]; V3:=X[3];
+  X1:=chi_phi(G,V1,T1); X2:=chi_phi(G,V2,T2); X3:=chi_phi(G,V3,T3); 
+ Append(~HodgeList, HodgeDiamondInvarG0(G,X1,X2,X3));
+end for;
+
+HodgeList;
+[
+    [ 4, 1, 0, 5, 12 ]
+]
