@@ -1,0 +1,304 @@
+// we need to load gullinbursti database by Conti-Ghigi-Pignatelli, together with
+
+load"ExSphSyst.txt";
+
+/* ================================================================================================
+This file contains all (auxiliary) functions that we need to determine the admissible numerical 
+data of threefolds isogenous to a product (Part 1 of the algorithm in Chapter 3 of my thesis), 
+in particular:
+i)  a function to compute the types Ti and 
+ii) an implementation of Conder's table, which reports the upper bound of the order of a group 
+    acting faithfully on a compact Riemann surface of genus g > 1 (in terms of g) for all genera
+    in the range 2 <=g<=301 (cf. Remark 3.0.5). 
+The code is also used in the paper "Mixed Threefolds Isogenous to a Product". Any citations below
+e.g. Proposition 3.0.10 refer to my thesis. 
+================================================================================================= */
+
+/* Let "T:=[h; m1,..., mr]" be a type. The script "Theta" determines the rational number Theta(T) 
+(see Definition 3.0.2). */
+
+Theta:= function(T)
+	h:=T[1]; t:= 2*h -2;
+	for i in [2..#T] do 
+		m:=T[i]; t:= t + 1 - 1/m;
+	end for;
+return t; end function;
+
+/* The script "OrderedSeq" transforms a (multi-) set or a sequence into an ordered sequence. */
+
+OrderedSeq:=function(mset)
+seq:=[ ];
+	while #mset ne 0 do 
+		Append(~seq, Minimum(mset)); Exclude(~mset, Minimum(mset)); 
+	end while;
+return seq; end function;
+
+/* The script "MinRam" returns the minimum length of a type T=[h; m1,...,mr] depending on h: 
+Recall that a Galois cover C --> C/G, where g(C)>1, is ramified in at least 
+i)   three points if h:=g(C/G)=0,
+ii)  one point if h=1 and 
+iii) zero points if h>1. */
+
+MinRam:=function(h)
+if h eq 0 then return 3; 
+	elif h eq 1 then return 1; else return 0;
+end if; end function;
+
+/* The script "ListOfTypes" determines the set of types T=[h; m1,..., mr] such that:
+i)   the mi's are bounded by 4g + 2 (Wiman),
+ii)  the mi's are divisors of GOrd and d, 
+iii) the length r of T is bounded from above according to Proposition 3.0.10 iv)
+     and form below by "MinRam(h)" 
+iv)  Hurwitz' formula 2g-2 = GOrd*Theta(T) holds. */
+
+ListOfTypes:=function(GOrd,g,d,h) 
+Types:= {}; Orders:={k: k in Divisors(Gcd(GOrd,d)) | 2 le k and k le 4*g +2}; 
+MaxRam:= Max(Floor(4*(g-1)/GOrd -4*h + 4),0);        
+	for r in [3.. 3] do M:=Multisets({ x : x in Orders},r);  // MODIFICA
+		for mset in M do T:=[h] cat OrderedSeq(mset);
+			if GOrd*Theta(T) eq (2*g-2) then  
+				Include(~Types,T) ;
+			end if; 
+	end for; end for;
+return Types; end function;
+
+/* The script "ThetaMin" returns for a fixed h (the genus of the quotient surface) the minimal 
+value of Theta that can be realized with a suitable type of the form T =[h; m1,..., mr] 
+(cf. Remark 3.0.3). */
+
+ThetaMin:=function(h)
+val:=0; L:=[1/42,1/2];
+	if h le 1 then 
+		val:=L[h+1]; else val:=2*h-2; 
+	end if;
+return val; end function;
+
+/* Using the script "Conder", we can decide if a natural number "GOrd" (a group order) is less 
+or equal to the maximum order of a group that can act on a compact Riemann surface of genus 
+g (where g > 1): for g between 2 and 301, we check if GOrd is less or equal to the value in 
+Conder's  table (cf. Remark 3.0.5), for g > 301 we simply check if Hurwitz' bound is fulfilled. 
+True or false is returned accordingly. */
+
+Conder:=function(GOrd,g)
+test:=true;
+CondersList:=[48,168,120,192,150,504,336,320,432,240,120,360,1092,504,720,1344,
+168,720,228,480,1008,192,216,720,750,624,1296,672,264,720,372,1536,1320,544,672,
+1728,444,912,936,960,410,1512,516,1320,2160,384,408,1920,1176,1200,2448,832,456,
+1296,1320,1344,1368,928,504,1440,732,1488,1512,3072,1014,576,804,2448,660,672,
+710,2160,876,1776,1800,912,1176,1872,948,1536,3888,1312,696,4032,1200,2064,712,
+2640,744,3600,2184,768,2232,768,3420,3840,1164,2352,1320,2400,1010,4896,1236,
+2496,2016,1696,888,5184,1308,2640,2664,2688,936,3420,936,1856,9828,960,1734,2880,
+5808,2928,1080,1488,1500,3024,1524,10752,3096,2080,1310,3960,1596,3216,6480,2176,
+1128,1152,1668,2184,1144,1152,1352,6912,12180,3504,3528,2368,1224,3600,1812,3648,
+2448,1320,1550,3744,1884,3792,1288,3840,1320,3888,1956,2624,6600,1344,1368,8064,
+4056,2720,6840,2064,1416,1856,3000,2640,1432,2848,1464,8640,2172,4368,4392,1600,
+1512,4464,1512,1536,4536,2640,1910,5760,2316,4656,3420,4704,1608,2640,2388,4800,
+4824,3232,1656,7344,2050,4944,1672,4368,2904,5040,2532,3392,1720,1728,1800,6480,
+2604,5232,5256,5280,1800,5328,2676,5376,5400,3616,1848,6840,2748,6072,3276,3712,
+1896,11232,1896,1920,5688,2176,1944,9600,2892,5808,11664,3904,4116,2624,2964,5952,
+2008,12000,2510,6048,12144,6096,4896,12288,2088,6192,3108,4160,3132,2112,2136,7920,
+2200,6384,2152,3216,2184,5040,3252,4896,6552,4384,3750,2304,3324,6672,6696,2688,
+2810,2304,3396,2400,10260,4368,2328,13824,13872,4640,6984,4672,2376,7056,2376,7104,
+3888,4768,4056,9000]; 
+if g le 301 then 
+	if GOrd gt CondersList[g-1] then 
+		test:=false;
+	end if;
+	else
+if GOrd gt 84*(g-1) then test:=false;
+end if; end if;
+return test; end function;
+
+AdNDunmixed:=function(chi)
+F:="ExcepUnmixed" cat IntegerToString(chi) cat ".txt";
+fprintf F, "Unmixed case, chi=%o and absolutely faithful G-action.\n\n\n
+Exceptional numerical data:\n\n\n", chi;
+b:=Floor(168*Sqrt(-21*chi));  	                   // bound for GOrd according to Corollary 3.0.7.
+SetAdUnmixed:={};
+
+for GOrd in [1..b] do
+	Generas:={};
+	Divi:=Divisors(-chi*GOrd);  
+		for n1 in [1..#Divi] do for n2 in [n1..#Divi] do
+			d1:=Divi[n1]; d2:=Divi[n2]; d3:=-chi*GOrd/(d1*d2);
+				if d3 in IntegerRing() and d3 ge d2 then d3:=IntegerRing()!d3;
+					if Conder(GOrd,d1+1) and Conder(GOrd,d2+1) and Conder(GOrd,d3+1) then 
+						Include(~Generas,[d1+1,d2+1,d3+1]);
+					end if; 
+				end if; 
+		end for; end for;
+for gens in Generas do
+	g1:=gens[1]; g2:=gens[2]; g3:=gens[3];
+	maxh1:=Floor(1-chi/((g2-1)*(g3-1))); 
+	maxh2:=Floor(1-chi/((g1-1)*(g3-1)));							              // maxhi are the upper bounds for the genera of the  
+	maxh3:=Floor(1-chi/((g1-1)*(g2-1))); 							              // quotient curves (Proposition 3.0.10 vi))
+		for h1 in [0..maxh1] do for h2 in [0..maxh2] do for h3 in [0..maxh3] do     
+				if GOrd^2 le -8*chi/(ThetaMin(h1)*ThetaMin(h2)*ThetaMin(h3)) then // we check the inequality from Proposition 3.0.6
+					for T1 in ListOfTypes(GOrd,g1,(g2-1)*(g3-1),h1) do   	      // the integers m_{i,j} in Ti are divisors of
+					for T2 in ListOfTypes(GOrd,g2,(g1-1)*(g3-1),h2) do	          // (g_[i+1]-1)*(g_[i+2]-1) cf. Proposition 3.0.10 ii)
+					for T3 in ListOfTypes(GOrd,g3,(g1-1)*(g2-1),h3) do
+						D:=[[GOrd]] cat OrderedSeq([T1,T2,T3]);	                  // to avoid repetitions, we order the types lexicographically		
+							if IsInSmallGroupDatabase(GOrd) then 
+								Include(~SetAdUnmixed,D);
+							else 
+								fprintf F, "D=%o\n\n", D;
+							end if;
+					end for; end for; end for; 
+				end if;
+		end for; end for; end for; 
+end for; 
+end for;
+return OrderedSeq(SetAdUnmixed); end function;	
+
+
+AdmitGenTripples:=function(chi)
+Results:=[];
+for x in AdNDunmixed(chi) do 
+   for n in [1..NumberOfSmallGroups(x[1][1])] do 
+      T1:=SequenceToMultiset([x[2][j]: j in [2..#x[2]]]);
+      T2:=SequenceToMultiset([x[3][j]: j in [2..#x[3]]]);
+      T3:=SequenceToMultiset([x[4][j]: j in [2..#x[4]]]);
+       if ExSphSystem(x[1][1],n,T1) then 
+          if ExSphSystem(x[1][1],n,T2) then 
+             if ExSphSystem(x[1][1],n,T3) then 
+                 Append(~ Results, [[x[1][1],n], x[2],x[3],x[4]]);
+             end if;
+          end if;
+      end if;
+   end for;
+end for;
+return Results;
+end function;
+
+
+ListTriplesSphSyst:=function(List)
+ Triples_Top_Types_comp_types_with_AutG:=[**];
+ for x in List do
+ x; 
+ IdG:=<x[1][1],x[1][2]>;
+ T1:=SequenceToMultiset([x[2][j]: j in [2..#x[2]]]);
+ T2:=SequenceToMultiset([x[3][j]: j in [2..#x[3]]]);
+ T3:=SequenceToMultiset([x[4][j]: j in [2..#x[4]]]);
+ tripleoftypes:=[T1,T2,T3];
+
+
+ Triples_Top_Types_comp_types:=[];
+   G:=SmallGroup(IdG[1],IdG[2]);
+
+
+   for type in tripleoftypes do 
+      test, generators:=generatorsFixedGroupFromDb(G,IdG[1],IdG[2], MultisetToSequence(type)); 
+      if test then 
+        Append(~Triples_Top_Types_comp_types, generators); 
+      elif generators eq "not present in database" then 
+            Append(~Triples_Top_Types_comp_types, FindGenerators(G, MultisetToSequence(type)));
+      else
+            Append(~Triples_Top_Types_comp_types, {});
+      end if;
+
+      
+   end for;
+
+   Triples_Top_Types_comp_types:={{* x, y, z*}: x in Triples_Top_Types_comp_types[1], y in Triples_Top_Types_comp_types[2], z in Triples_Top_Types_comp_types[3]};
+   
+   r,P:=PermutationRepresentation(AutomorphismGroup(G));
+   
+   
+   
+
+   for triple_of_ssg in Triples_Top_Types_comp_types do 
+     triple_of_ssg_seq:=MultisetToSequence(triple_of_ssg);
+     
+     for phi in P do 
+       for psi in P do
+      phiV2:=[(phi @@ r)(triple_of_ssg_seq[2][i]) : i in [1..#triple_of_ssg_seq[2]] ];
+      phiV3:=[(psi @@ r)(triple_of_ssg_seq[3][i]) : i in [1..#triple_of_ssg_seq[3]] ];
+
+      Append(~Triples_Top_Types_comp_types_with_AutG, [*G, [triple_of_ssg_seq[1],phiV2,phiV3]*]);
+
+
+       end for;
+     end for;
+   end for; 
+
+  end for;
+ return Triples_Top_Types_comp_types_with_AutG;
+end function;
+
+
+/* The script "StabSet" determines the stabilizer set of a generating vector V of type T 
+for the group G (cf. Definition 2.3.1). */
+
+StabSet:= function(V,T,G) 
+h:=T[1]; Set:={Id(G)};
+	for i in [1..#T-1] do g:=V[i]; 
+		for n in [1..Order(g)] do
+			Set := Set join Conjugates(G,g^n) ;
+	end for; end for;
+return Set; end function;
+
+/* The script "SmoothUnmixed" decides if the freeness condition from Proposition 2.3.2 a)
+holds (unmixed case). True or false is returned accordingly. */
+
+SmoothUnmixed:=function(G,V1,V2,V3,T1,T2,T3)
+test:=true; stab1:=StabSet(V1,T1,G); stab2:=StabSet(V2,T2,G); stab3:=StabSet(V3,T3,G); 
+	if #(stab1 meet stab2 meet stab3) gt 1 then 
+		test:=false; 
+	end if; 
+return test; end function;
+
+
+SmoothCondOfTheList:=function(List)
+  Result:=[**];
+  for x in List do 
+      // x; 
+     y:=x[2];
+     T1:=[0] cat [Order(g) : g in y[1]]; T2:=[0] cat [Order(g) : g in y[2]]; T3:=[0] cat [Order(g) : g in y[3]]; 
+     if SmoothUnmixed(x[1],y[1],y[2],y[3],T1,T2,T3) then 
+         Append(~Result, x);
+        //  break x; 
+     end if;
+  end for;
+  return Result;
+end function;
+
+SmoothUnmixed_withKernels:=function(G,V1,V2,V3,T1,T2,T3, K1, K2, K3)
+test:=true; stab1:=StabSet(V1,T1,G); stab2:=StabSet(V2,T2,G); stab3:=StabSet(V3,T3,G); 
+     stab1xK1:={};
+     for k in K1 do 
+       for g in stab1 do 
+        Include(~stab1xK1, g*k);
+       end for;
+     end for;
+      stab2xK2:={};
+     for k in K2 do 
+       for g in stab2 do 
+        Include(~stab2xK2, g*k);
+       end for;
+     end for;
+      stab3xK3:={};
+     for k in K3 do 
+       for g in stab3 do 
+        Include(~stab3xK3, g*k);
+       end for;
+     end for;
+        
+	if #(stab1xK1 meet stab2xK2 meet stab3xK3) gt 1 then 
+		test:=false; 
+	end if; 
+return test; end function;
+
+
+SmoothCondOfTheList_withKernels:=function(List, K1,K2,K3)
+  Result:=[**];
+  for x in List do 
+      // x; 
+     y:=x[2];
+     T1:=[0] cat [Order(g) : g in y[1]]; T2:=[0] cat [Order(g) : g in y[2]]; T3:=[0] cat [Order(g) : g in y[3]]; 
+     if SmoothUnmixed_withKernels(x[1],y[1],y[2],y[3],T1,T2,T3,K1,K2,K3) then 
+         Append(~Result, x);
+        //  break x; 
+     end if;
+  end for;
+  return Result;
+end function;
